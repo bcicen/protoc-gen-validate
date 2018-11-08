@@ -7,11 +7,12 @@ package {{ pkg . }}
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io"
 	"net"
+	"net/http"
 	"net/mail"
 	"net/url"
 	"regexp"
@@ -32,7 +33,6 @@ var (
 	_ = json.Marshaler
 	_ = errors.New("")
 	_ = fmt.Print
-	_ = io.ReadCloser
 	_ = utf8.UTFMax
 	_ = (*regexp.Regexp)(nil)
 	_ = (*strings.Reader)(nil)
