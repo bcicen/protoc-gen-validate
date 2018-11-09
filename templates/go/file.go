@@ -29,10 +29,8 @@ import (
 // ensure the imports are used
 var (
 	_ = bytes.MinRead
-	_ = json.Marshaler
 	_ = errors.New("")
 	_ = fmt.Print
-	_ = io.ReadCloser
 	_ = utf8.UTFMax
 	_ = (*regexp.Regexp)(nil)
 	_ = (*strings.Reader)(nil)
