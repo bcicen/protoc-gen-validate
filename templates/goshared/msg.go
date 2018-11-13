@@ -38,13 +38,8 @@ func (m {{ (msgTyp .).Pointer }}) Validate() error {
 
 func {{ (msgTyp .) }}Decoder(_ context.Context, r io.ReadCloser) (interface{}, error) {
 	var in {{ (msgTyp .) }}
-
 	err := json.NewDecoder(r).Decode(&in)
-	if err != nil {
-		return nil, err
-	}
-
-	return in, in.Validate()
+	return in, err
 }
 
 {{ if needs . "hostname" }}{{ template "hostname" . }}{{ end }}
