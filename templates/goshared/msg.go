@@ -36,9 +36,9 @@ func (m {{ (msgTyp .).Pointer }}) Validate() error {
 	{{ end -}}
 }
 
-func {{ (msgTyp .) }}Decoder(_ context.Context, r io.ReadCloser) (interface{}, error) {
+func {{ (msgTyp .) }}Decoder(_ context.Context, req *http.Request) (interface{}, error) {
 	var in {{ (msgTyp .) }}
-	err := json.NewDecoder(r).Decode(&in)
+	err := json.NewDecoder(req.Body).Decode(&in)
 	return in, err
 }
 
